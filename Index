@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMP – Innovative Math Program</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f4f8fc;
+}
+
+header{
+background:#123c69;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:10px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+padding:50px;
+text-align:center;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+}
+
+.button{
+margin-top:25px;
+padding:14px 30px;
+border:none;
+background:#2f80ed;
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.container{
+width:90%;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:25px;
+margin-top:25px;
+border-radius:15px;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.hidden{
+display:none;
+}
+
+.tabs{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+}
+
+.tab{
+padding:12px 25px;
+background:#dbe8ff;
+cursor:pointer;
+border-radius:10px;
+}
+
+.tab:hover{
+background:#9cc3ff;
+}
+
+.level{
+padding:12px;
+margin-top:10px;
+background:#f7f7f7;
+border-left:5px solid #2f80ed;
+}
+
+footer{
+margin-top:60px;
+padding:20px;
+background:#123c69;
+color:white;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Innovative Math Program (IMP)</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#instructions">Instructions</a>
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section class="hero">
+
+<h1>Making Mathematics Joyful</h1>
+
+<p>
+Welcome to IMP.
+A storytelling-based mathematics program for students and teachers.
+Learn through riddles, activities, levels and challenges.
+</p>
+
+<button class="button" onclick="login()">
+Login with Google
+</button>
+
+</section>
+
+
+<div class="container">
+
+<!-- ABOUT -->
+
+<div class="card" id="about">
+
+<h2>About IMP</h2>
+
+<br>
+
+<p>
+IMP combines stories, puzzles, quizzes,
+interactive activities and structured learning.
+Students progress through levels and explore maths
+through curiosity.
+</p>
+
+</div>
+
+
+<!-- INSTRUCTIONS -->
+
+<div class="card" id="instructions">
+
+<h2>Instructions</h2>
+
+<br>
+
+<ul>
+
+<li>Choose Student or Teacher mode</li>
+
+<li>Login using Google</li>
+
+<li>Select your learning category</li>
+
+<li>Complete levels in order</li>
+
+<li>Track progress</li>
+
+</ul>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div class="card hidden" id="dashboard">
+
+<h2>IMP Dashboard</h2>
+
+<br>
+
+<div class="tabs">
+
+<div class="tab"
+onclick="showCategory('pre')">
+Pre Primary
+</div>
+
+<div class="tab"
+onclick="showCategory('primary')">
+Primary
+</div>
+
+<div class="tab"
+onclick="showCategory('secondary')">
+Secondary
+</div>
+
+</div>
+
+
+<div id="content">
+
+Choose category
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+Built with ❤️ for IMP
+
+</footer>
+
+<script>
+
+function login(){
+
+document
+.getElementById("dashboard")
+.classList.remove("hidden");
+
+window.scrollTo({
+top:700,
+behavior:"smooth"
+});
+
+}
+
+function showCategory(type){
+
+let data="";
+
+if(type==="pre"){
+
+data=`
+<h3>Pre Primary</h3>
+
+<div class='level'>
+Level 1 — Numbers
+</div>
+
+<div class='level'>
+Level 2 — Shapes
+</div>
+
+<div class='level'>
+Level 3 — Counting
+</div>
+
+<div class='level'>
+Level 4 — Patterns
+</div>
+
+<div class='level'>
+Level 5 — Fun Games
+</div>
+`;
+
+}
+
+if(type==="primary"){
+
+data=`
+<h3>Primary</h3>
+
+<div class='level'>
+Level 1 — Number Sense
+</div>
+
+<div class='level'>
+Level 2 — Arithmetic
+</div>
+
+<div class='level'>
+Level 3 — Fractions
+</div>
+
+<div class='level'>
+Level 4 — Geometry
+</div>
+
+<div class='level'>
+Level 5 — Olympiad Starter
+</div>
+`;
+
+}
+
+if(type==="secondary"){
+
+data=`
+<h3>Secondary</h3>
+
+<div class='level'>
+Level 1 — Algebra
+</div>
+
+<div class='level'>
+Level 2 — Geometry
+</div>
+
+<div class='level'>
+Level 3 — Statistics
+</div>
+
+<div class='level'>
+Level 4 — Logical Thinking
+</div>
+
+<div class='level'>
+Level 5 — Advanced Challenge
+</div>
+`;
+
+}
+
+document.getElementById("content").innerHTML=data;
+
+}
+
+</script>
+
+</body>
+
+</html>
